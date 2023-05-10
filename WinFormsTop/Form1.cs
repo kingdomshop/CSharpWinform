@@ -38,7 +38,7 @@ namespace WinFormsTop
                             this.textBox1.Text = values[0].ToString();
                             this.textBox2.Text = values[1].ToString();
                             this.textBox3.Text = values[1].ToString();
-                        }));        
+                        }));
                     }
                 });
             }
