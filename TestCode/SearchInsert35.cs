@@ -32,7 +32,7 @@ namespace TestCode
             set { }
         }
 
-        static void Main()
+        /**static void Main()
         {
             DriveInfo[] drives = DriveInfo.GetDrives();
             foreach (DriveInfo drive in drives)
@@ -47,7 +47,7 @@ namespace TestCode
                     Console.WriteLine();
                 }
             }
-        }
+        }**/
 
         void console0(object? ob)
         {

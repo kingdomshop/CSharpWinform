@@ -10,26 +10,48 @@
         MouseMove="Window_MouseMove" Height="750" Width="1300">
 
     <Window.Resources>
-        <Style TargetType="RadioButton" x:Key="NavTabButton">
-            <Setter Property="FontSize" Value="15"></Setter>
-            <Setter Property="Foreground" Value="#DDD"/>
-            <Setter Property="Padding" Value="10,5"/>
-            <Setter Property="Margin" Value="5,0"/>
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate>
-                        <Border Background="{TemplateBinding Background}" CornerRadius="5,5,0,0">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-                            </Grid>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Asset\Style\ButtonStyles.xaml"/>
+                <ResourceDictionary>
+                        <Style TargetType="RadioButton" x:Key="NavTabButtonStyle">
+                            <Setter Property="FontSize" Value="20"></Setter>
+                            <Setter Property="Foreground" Value="#DDD"/>
+                            <Setter Property="Padding" Value="10,5"/>
+                            <Setter Property="Margin" Value="5,0"/>
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Command" Value="{Binding TabChangedCommand}"/>
+                            <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="RadioButton">
+                                    <Border Background="{TemplateBinding Background}" CornerRadius="5,5,0,0" MouseMove="Border_MouseMove" MouseLeave="Display_MouseLeave">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto"></ColumnDefinition>
+                                                <ColumnDefinition Width="auto"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Text="{TemplateBinding Tag}" FontFamily="Asset/#iconfont" FontSize="23" 
+                                               VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,0,0,0"/>
+                                            <ContentPresenter Grid.Column="1" VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                                      HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                                      Margin="5,0"/>
+                                        </Grid>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+
+                            <Style.Triggers>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter Property="Foreground" Value="White"></Setter>
+                                    <Setter Property="Background" Value="#FF6800"></Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+        
     </Window.Resources>
     <Grid>
         <Grid.Background>
@@ -41,30 +63,36 @@
         </Grid.Background>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="100">
-                
-            </RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Grid>
+        <Grid Grid.Row="0">
             <Border Width="55" Height="50" Margin="10,0,20,0" HorizontalAlignment="Left">
                 <Border.Background>
-                    <ImageBrush ImageSource="Asset/OIP-C.jpg"></ImageBrush>
+                    <ImageBrush ImageSource="Asset/log.jpg"></ImageBrush>
                 </Border.Background>
             </Border>
+
             <StackPanel VerticalAlignment="Center">
-                <TextBlock Text="昆山佰奥智能装备有限公司" Foreground="Wheat" FontSize="25" Margin="85,0,0,0"></TextBlock>
-                <Border Height="45" Background="Transparent" BorderBrush="#FF6800" BorderThickness="0,0,0,1">
+                <TextBlock Name="biaoti" Text="昆山佰奥智能装备有限公司" Foreground="Wheat" FontSize="25" Margin="85,0,0,0"></TextBlock>
+                <Border Height="45" Background="Transparent" BorderBrush="#FF6800" BorderThickness="0,0,0,1" Margin="10,0">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="70,0,0,0">
-                        <RadioButton Content="系统监控" IsChecked="True"></RadioButton>
-                        <RadioButton Content="系统监控"></RadioButton>
-                        <RadioButton Content="系统监控"></RadioButton>
-                        <RadioButton Content="系统监控"></RadioButton>
-                        <RadioButton Content="系统监控"></RadioButton>
-                        <RadioButton Content="系统监控"></RadioButton>  
+                        <RadioButton Content="系统监控" Tag="&#xE606;" Style="{StaticResource NavTabButtonStyle}" 
+                                     CommandParameter="WpfAppStudy.dll|WpfAppStudy.View.SystermMointor" IsChecked="True"/>
+                        <RadioButton Content="实时曲线" Tag="&#xE601;" Style="{StaticResource NavTabButtonStyle}"
+                                     CommandParameter="WpfAppStudy.dll|WpfAppStudy.View.UserControl1"/>
+                        <RadioButton Content="历史曲线" Tag="&#xE608;" Style="{StaticResource NavTabButtonStyle}"/>
+                        <RadioButton Content="控制策略" Tag="&#xE60D;" Style="{StaticResource NavTabButtonStyle}"/>
+                        <RadioButton Content="系统操作" Tag="&#xE607;" Style="{StaticResource NavTabButtonStyle}"/>
+                        <RadioButton Content="报警管理" Tag="&#xE607;" Style="{StaticResource NavTabButtonStyle}"/>
+                        <RadioButton Content="报表管理" Tag="&#xE607;" Style="{StaticResource NavTabButtonStyle}"/>
                     </StackPanel>
                 </Border>
             </StackPanel>
         </Grid>
+        
+        <ContentControl Grid.Row="1" Content="{Binding MainContent}"></ContentControl>
+        
     </Grid>
 </Window>

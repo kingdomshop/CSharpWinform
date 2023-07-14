@@ -8,12 +8,36 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Asset\iconfont.ttf" />
+    <None Remove="Asset\icon\列表.svg" />
+    <None Remove="Asset\image\im2.jpg" />
+    <None Remove="Asset\image\img1.gif" />
+    <None Remove="Asset\log.jpg" />
+    <None Remove="Asset\STXINGKA.TTF" />
+    <None Remove="Asset\ziti.woff2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MySql.Data" Version="8.0.32.1" />
     <PackageReference Include="NModbus4" Version="2.1.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="ViewModel\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dpf.Controls\Dpf.Controls.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Asset\iconfont.ttf" />
+    <Resource Include="Asset\icon\列表.svg" />
+    <Resource Include="Asset\image\im2.jpg" />
+    <Resource Include="Asset\image\img1.gif" />
+    <Resource Include="Asset\log.jpg" />
+    <Resource Include="Asset\STXINGKA.TTF" />
+    <Resource Include="Asset\ziti.woff2" />
   </ItemGroup>
 
 </Project>

@@ -12,9 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WpfAppStudy.ViewModel;
 
-namespace WpfAppStudy
+namespace Dpf.Control
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -24,26 +23,6 @@ namespace WpfAppStudy
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = new MainViewModel();
         }
-
-        private void Window_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
-                this.DragMove();
-            }
-        }
-
-        private void Border_MouseMove(object sender, MouseEventArgs e)
-        {
-            
-            this.Cursor = Cursors.Hand;
-        }
-
-        private void Display_MouseLeave(object sender, MouseEventArgs e)
-        {
-            this.Cursor = null;
-        }
-    }         
+    }
 }

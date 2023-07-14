@@ -1,14 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace WpfAppStudy.Model
 {
-    class Student
+    class Student:INotifyPropertyChanged
     {
-        public int Id { get; set; }
+        public event PropertyChangedEventHandler propertyChanged;
+        public int Id { set
+            {
+                Id = value;
+                if (this.PropertyChanged != null)
+                {
+
+                }
+            }
+        }
 
         public string Name { get; set; }
 
@@ -20,6 +30,6 @@ namespace WpfAppStudy.Model
             this.Description = Description; 
         }
 
-
+        public event PropertyChangedEventHandler? PropertyChanged;
     }
 }
