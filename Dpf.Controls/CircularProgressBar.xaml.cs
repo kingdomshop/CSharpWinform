@@ -46,6 +46,31 @@ namespace Dpf.Controls
             this.UpdateValue();
         }
 
+
+
+        public Brush BackColor
+        {
+            get { return (Brush)GetValue(backcolorProperty); }
+            set { SetValue(backcolorProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for backcolor.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty backcolorProperty =
+            DependencyProperty.Register("Backcolor", typeof(Brush), typeof(CircularProgressBar), new PropertyMetadata(Brushes.LightGray));
+
+
+
+        public Brush ForeColor
+        {
+            get { return (Brush)GetValue(ForeColorProperty); }
+            set { SetValue(ForeColorProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ForeColor.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ForeColorProperty =
+            DependencyProperty.Register("ForeColor", typeof(Brush), typeof(CircularProgressBar), new PropertyMetadata(Brushes.Orange));
+
+
         private static void OnPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             (d as CircularProgressBar).UpdateValue();
