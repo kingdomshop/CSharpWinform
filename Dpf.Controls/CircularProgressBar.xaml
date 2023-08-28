@@ -10,9 +10,13 @@
         <Ellipse Width="{Binding ElementName=layout,Path=Width}"
                  Height="{Binding ElementName=layout,Path=Width}"
                  StrokeThickness="6"
-                 Stroke="#eee"
-                 />
-        <Path Name="path" StrokeThickness="4" Stroke="Orange" 
+                 Stroke="{Binding BackColor,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}"
+                 >
+            <Ellipse.Effect>    
+                <DropShadowEffect ShadowDepth="0" Direction="0" Color="White" BlurRadius="5"/>  
+            </Ellipse.Effect>
+         </Ellipse>
+        <Path Name="path" StrokeThickness="4" Stroke="{Binding ForeColor, RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" 
               StrokeStartLineCap="Round"  StrokeEndLineCap="Round"></Path>
         <Viewbox Margin="20">
             <TextBlock Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center">
