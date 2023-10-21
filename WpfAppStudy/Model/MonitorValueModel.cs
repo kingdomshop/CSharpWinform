@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LiveCharts;
+using LiveCharts.Defaults;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -50,10 +52,13 @@ namespace WpfAppStudy.Model
                         msg += "极高"; state = MonitorValueState.Low;
                     }
                     ValueStateChanged(0, msg + "。当前值：" + value.ToString());
+                    values.Add(new ObservableValue(value));
                 }
             }
        }
 
         public string ValueDesc { get; set; }
+
+        public ChartValues<ObservableValue> values { get; set; } = new ChartValues<ObservableValue>();
     }
 }

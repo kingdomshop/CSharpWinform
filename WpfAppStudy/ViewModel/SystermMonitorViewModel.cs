@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Google.Protobuf.WellKnownTypes;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -27,7 +28,30 @@ namespace WpfAppStudy.ViewModel
                Unit ="m",
                CurrentValue=45
             });
-            
+            TestDevice.MonitorList.Add(new MonitorValueModel
+            {
+                ValueName = "入口压力",
+                Unit ="Mpa",CurrentValue=34
+            });
+            TestDevice.MonitorList.Add(new MonitorValueModel
+            {
+                ValueName = "入口温度",
+                Unit = "C",
+                CurrentValue = 26
+            });
+            TestDevice.MonitorList.Add(new MonitorValueModel
+            {
+                ValueName = "出口压力",
+                Unit = "Mpa",
+                CurrentValue = 34
+            });
+            TestDevice.MonitorList.Add(new MonitorValueModel
+            {
+                ValueName = "出口温度",
+                Unit = "C",
+                CurrentValue = 34
+            });
+            TestDevice.WarningMessageList.Add(new WarningMessageModel { Message = $"冷却塔 1#液位极低，当前压力值为"});
         }
 
         private void InitLogInfo()
@@ -38,6 +62,10 @@ namespace WpfAppStudy.ViewModel
             this.LogList.Add(new LogModel { RowNumber = 4, DeviceName = "设备4", LogInfo = "已经启动", Message = "无异常", LogType = LogType.Normal });
             this.LogList.Add(new LogModel { RowNumber = 5, DeviceName = "设备5", LogInfo = "已经启动", Message = "无异常", LogType = LogType.warn });
         }
+
+
+       
+
 
        
     }

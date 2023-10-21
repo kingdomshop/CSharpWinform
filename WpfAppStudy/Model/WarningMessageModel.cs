@@ -8,5 +8,10 @@ namespace WpfAppStudy.Model
 {
     class WarningMessageModel
     {
+        private String message;
+
+        public String Message { get; set; }
+
+        
     }
 }
