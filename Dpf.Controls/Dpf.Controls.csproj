@@ -6,4 +6,9 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="HslCommunication" Version="11.6.4" />
+    <PackageReference Include="S7netplus" Version="0.20.0" />
+  </ItemGroup>
+
 </Project>

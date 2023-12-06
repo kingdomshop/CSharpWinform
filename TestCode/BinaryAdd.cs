@@ -8,12 +8,6 @@ namespace TestCode
 {
     class BinaryADD
     {
-        public static void Main(string[] args)
-        {
-            
-            System.Console.WriteLine(AddBinary("100", "111010"));
-        }
-
         public static string AddBinary(String a, String b)
         {
             int flag = 0;

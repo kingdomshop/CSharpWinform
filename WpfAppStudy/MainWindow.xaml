@@ -82,7 +82,8 @@
                                      CommandParameter="WpfAppStudy.dll|WpfAppStudy.View.SystermMointor" IsChecked="True"/>
                         <RadioButton Content="实时曲线" Tag="&#xE601;" Style="{StaticResource NavTabButtonStyle}"
                                      CommandParameter="WpfAppStudy.dll|WpfAppStudy.View.UserControl1"/>
-                        <RadioButton Content="历史曲线" Tag="&#xE608;" Style="{StaticResource NavTabButtonStyle}"/>
+                        <RadioButton Content="历史曲线" Tag="&#xE608;" Style="{StaticResource NavTabButtonStyle}"
+                                     CommandParameter="WpfAppStudy.dll|WpfAppStudy.View.UserControl2"/>
                         <RadioButton Content="控制策略" Tag="&#xE60D;" Style="{StaticResource NavTabButtonStyle}"/>
                         <RadioButton Content="系统操作" Tag="&#xE607;" Style="{StaticResource NavTabButtonStyle}"/>
                         <RadioButton Content="报警管理" Tag="&#xE607;" Style="{StaticResource NavTabButtonStyle}"/>
@@ -91,8 +92,7 @@
                 </Border>
             </StackPanel>
         </Grid>
-        
+
         <ContentControl Grid.Row="1" Content="{Binding MainContent}"></ContentControl>
-        
     </Grid>
 </Window>

@@ -70,7 +70,7 @@ namespace Dpf.Controls
         public static readonly DependencyProperty ForeColorProperty =
             DependencyProperty.Register("ForeColor", typeof(Brush), typeof(CircularProgressBar), new PropertyMetadata(Brushes.Orange));
 
-
+        //as 用来进行类型转换
         private static void OnPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             (d as CircularProgressBar).UpdateValue();

@@ -8,7 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="HslCommunication" Version="11.6.4" />
     <PackageReference Include="NModbus4" Version="2.1.0" />
+    <PackageReference Include="S7netplus" Version="0.20.0" />
     <PackageReference Include="System.IO.Ports" Version="7.0.0" />
   </ItemGroup>
 

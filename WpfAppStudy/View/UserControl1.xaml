@@ -6,9 +6,10 @@
              xmlns:local="clr-namespace:WpfAppStudy.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        
-        <TextBlock FontSize="100" HorizontalAlignment="Center" Grid.Row="0">王兴涛</TextBlock>
-        <Image Height="150" Grid.Row="1" Source="/Asset/image/im2.jpg"></Image>
+    <Grid >
+        <StackPanel>
+            <Label Name="la" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="20px" Height="30px" Width="100px" Background="Gray">未连接</Label>
+            <Button  Margin="10px" Width="80" Height="30" Click="Button_Click">建立连接</Button>
+        </StackPanel>
     </Grid>
 </UserControl>

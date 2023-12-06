@@ -19,7 +19,7 @@
         </Grid.ColumnDefinitions>
 
         <!--左侧设备详情 -->
-        <Grid>
+        <Grid DataContext="{Binding Source={StaticResource vmSM}}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>

@@ -18,9 +18,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="HslCommunication" Version="11.6.4" />
     <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
     <PackageReference Include="MySql.Data" Version="8.0.32.1" />
     <PackageReference Include="NModbus4" Version="2.1.0" />
+    <PackageReference Include="S7netplus" Version="0.20.0" />
   </ItemGroup>
 
   <ItemGroup>

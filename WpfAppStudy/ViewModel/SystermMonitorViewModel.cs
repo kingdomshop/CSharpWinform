@@ -21,17 +21,18 @@ namespace WpfAppStudy.ViewModel
         {
             InitLogInfo();
 
-            TestDevice = new DeviceModel("冷却塔",true,true);
+            TestDevice = new DeviceModel("冷却塔", true, true);
             TestDevice.MonitorList.Add(new MonitorValueModel
             {
-               ValueName="液位",
-               Unit ="m",
-               CurrentValue=45
+                ValueName = "液位",
+                Unit = "m",
+                CurrentValue = 45
             });
             TestDevice.MonitorList.Add(new MonitorValueModel
             {
                 ValueName = "入口压力",
-                Unit ="Mpa",CurrentValue=34
+                Unit = "Mpa",
+                CurrentValue = 34
             });
             TestDevice.MonitorList.Add(new MonitorValueModel
             {
@@ -51,7 +52,9 @@ namespace WpfAppStudy.ViewModel
                 Unit = "C",
                 CurrentValue = 34
             });
-            TestDevice.WarningMessageList.Add(new WarningMessageModel { Message = $"冷却塔 1#液位极低，当前压力值为"});
+            TestDevice.WarningMessageList.Add(new WarningMessageModel { Message = $"冷却塔 1#液位极低，当前压力值为1" });
+            TestDevice.WarningMessageList.Add(new WarningMessageModel { Message = $"冷却塔 1#液位极低，当前压力值为1" });
+            TestDevice.WarningMessageList.Add(new WarningMessageModel { Message = $"冷却塔 1#液位极低，当前压力值为1" });
         }
 
         private void InitLogInfo()
