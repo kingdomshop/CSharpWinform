@@ -21,6 +21,7 @@ namespace WpfAppStudy.ViewModel
         {
             InitLogInfo();
 
+            #region 测试数据，为了设置数据模板
             TestDevice = new DeviceModel("冷却塔", true, true);
             TestDevice.MonitorList.Add(new MonitorValueModel
             {
@@ -55,6 +56,7 @@ namespace WpfAppStudy.ViewModel
             TestDevice.WarningMessageList.Add(new WarningMessageModel { Message = $"冷却塔 1#液位极低，当前压力值为1" });
             TestDevice.WarningMessageList.Add(new WarningMessageModel { Message = $"冷却塔 1#液位极低，当前压力值为1" });
             TestDevice.WarningMessageList.Add(new WarningMessageModel { Message = $"冷却塔 1#液位极低，当前压力值为1" });
+            #endregion
         }
 
         private void InitLogInfo()

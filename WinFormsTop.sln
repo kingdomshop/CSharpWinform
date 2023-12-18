@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfAppStudy", "WpfAppStudy\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dpf.Controls", "Dpf.Controls\Dpf.Controls.csproj", "{307B354B-80F7-49CC-8819-CA7F48FB24A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsAppTest", "WinFormsAppTest\WinFormsAppTest.csproj", "{CABB9875-DA66-4D83-B998-ACD6FDE7A79B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{307B354B-80F7-49CC-8819-CA7F48FB24A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{307B354B-80F7-49CC-8819-CA7F48FB24A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{307B354B-80F7-49CC-8819-CA7F48FB24A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CABB9875-DA66-4D83-B998-ACD6FDE7A79B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CABB9875-DA66-4D83-B998-ACD6FDE7A79B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CABB9875-DA66-4D83-B998-ACD6FDE7A79B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CABB9875-DA66-4D83-B998-ACD6FDE7A79B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,19 +9,21 @@ using System.Threading.Tasks;
 using HslCommunication;
 using HslCommunication.Profinet;
 using HslCommunication.Profinet.Melsec;
-
 namespace WpfAppStudy.DAL
 {
     public class PlcDataAcess
     {
         //生成Plc对象
         public MelsecA1ENet mel = new MelsecA1ENet();
-        public PlcDataAcess(string ip,int port) { 
+        
+        public PlcDataAcess(string ip, int port)
+        {
             mel.IpAddress = ip;
             mel.Port = port;
         }
 
-        public bool isCOnnect() {
+        public bool isCOnnect()
+        {
             OperateResult result = mel.ConnectServer();
             if (result.IsSuccess)
             {
@@ -29,6 +31,8 @@ namespace WpfAppStudy.DAL
             }
             return false;
         }
+
+        
 
 
     }

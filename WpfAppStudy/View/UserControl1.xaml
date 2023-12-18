@@ -8,8 +8,15 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid >
         <StackPanel>
-            <Label Name="la" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="20px" Height="30px" Width="100px" Background="Gray">未连接</Label>
-            <Button  Margin="10px" Width="80" Height="30" Click="Button_Click">建立连接</Button>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+            </Grid>
+            <Label Grid.Row="1" Name="la" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="20px" Height="30px" Width="100px" Background="Gray">未连接</Label>
+            <Button Grid.Row="2"  Margin="10px" Width="80" Height="30" Click="Button_Click">建立连接</Button>
+            <Button Grid.Row="2" Margin="10px" Width="80" Height="30" Click="Button_Click_1">断开连接</Button>
         </StackPanel>
     </Grid>
 </UserControl>

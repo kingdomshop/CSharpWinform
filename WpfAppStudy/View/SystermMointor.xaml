@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:WpfAppStudy.View"
              xmlns:zxc="clr-namespace:Dpf.Controls;assembly=Dpf.Controls"
              xmlns:vm="clr-namespace:WpfAppStudy.ViewModel"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" >
     <UserControl.Resources>
@@ -19,22 +20,66 @@
         </Grid.ColumnDefinitions>
 
         <!--左侧设备详情 -->
-        <Grid DataContext="{Binding Source={StaticResource vmSM}}">
+        <Grid DataContext="{Binding Source={StaticResource vmSM},Path=TestDevice}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
-            <TextBlock Text="冷却塔 1#" Foreground="White"/>
-            <ItemsControl Grid.Row="1"/>
+            <TextBlock Text="{Binding DeviceName}" Foreground="White"/>
+            <ItemsControl Grid.Row="1" ItemsSource="{Binding MonitorList}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="60"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="30"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding ValueName,StringFormat=\{0\}:}" Foreground="#99FFFFFF"/>
+                            <lvc:CartesianChart Grid.Column="1" MinHeight="30" DataTooltip="{x:Null}" Grid.ColumnSpan="2" Margin="1,0,29,0">
+                                <lvc:CartesianChart.Series>
+                                    <lvc:LineSeries Fill="Transparent" Values="{Binding values}" PointGeometrySize="0" StrokeThickness="0.5">
+                                        <lvc:LineSeries.Stroke>
+                                            <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                                                <GradientStop Color="Orange" Offset="0.5"/>
+                                                <GradientStop Color="#00FFFFFF" Offset="0"/>
+                                                <GradientStop Color="#FFFFE2AE" Offset="0.1"/>
+                                            </LinearGradientBrush>
+                                        </lvc:LineSeries.Stroke>
+                                    </lvc:LineSeries>
+                                </lvc:CartesianChart.Series>
+                                <lvc:CartesianChart.AxisX>
+                                    <lvc:Axis ShowLabels="False"/>
+                                </lvc:CartesianChart.AxisX>
+                                <lvc:CartesianChart.AxisY>
+                                    <lvc:Axis ShowLabels="False"/>
+                                </lvc:CartesianChart.AxisY>
+                            </lvc:CartesianChart>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
             <StackPanel Orientation="Horizontal" Grid.Row="2">
                 <TextBlock Text="实时状态："/>
                 <ToggleButton/>
             </StackPanel>
             <ToggleButton Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right"/>
 
-            <ItemsControl Grid.Row="3"/>
+            <ItemsControl Grid.Row="3" ItemsSource="{Binding WarningMessageList}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding Message}" Foreground="#99FFFFFF"/>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
         </Grid>
 
         <!-- 右侧全局数据-->
